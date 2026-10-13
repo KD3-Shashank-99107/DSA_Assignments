@@ -1,0 +1,18 @@
+
+public class Assignment01 {
+	static void binaryToDecimal(int num) {
+		
+		if(num == 0) {
+			return;
+		}
+		else {
+			num = num/2;
+			binaryToDecimal(num);
+			System.out.println(num%2);
+		}
+	}
+	
+	public static void main(String args[]) {
+		binaryToDecimal(11);
+	}
+}

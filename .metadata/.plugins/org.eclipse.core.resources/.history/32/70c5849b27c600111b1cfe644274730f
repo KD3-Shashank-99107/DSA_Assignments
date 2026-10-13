@@ -1,0 +1,132 @@
+
+public class BST {
+	static class Node{
+		private int data;
+		private Node left;
+		private Node right;
+		
+		public Node(int data) {
+			this.data = data;
+		}
+	}
+	
+	private Node root;
+	
+	public BST() {
+		root = null;
+	}
+	
+	public boolean isEmpty() {
+		return root == null;
+	}
+	
+	public void addData(int value) {
+		Node newNode = new Node(value);
+		
+		if(root == null) {
+			root = newNode;
+		} else {
+			Node trav = root;
+			while(true) {
+				if(trav.data > value) {
+					if(trav.left == null) {
+						trav.left = newNode;
+						break;
+					} else {
+						trav = trav.left;
+					}
+				} else {
+						if(trav.right == null) {
+							trav.right = newNode;
+							break;
+						}
+					else {
+						trav = trav.right;
+					}
+				}
+			}
+		}
+	}
+	
+	private void preOrder(Node trav) {
+		if(trav == null) {
+			return;
+		}
+		System.out.print(" " + trav.data);
+		preOrder(trav.left);
+		preOrder(trav.right);
+	}
+	
+	public void preOrder() {
+		System.out.print("PreOrder print : ");
+		preOrder(root);
+		System.out.println();
+	}
+	
+	private void inOrder(Node trav) {
+		if(trav == null) {
+		   return;
+		}
+		inOrder(trav.left);
+		System.out.print(" " + trav.data);
+		inOrder(trav.right);
+	}
+	
+	public void inOrder() {
+		System.out.print("inOrder print : ");
+		inOrder(root);
+		System.out.println();
+	}
+	
+	
+	private void postOrder(Node trav) {
+		if(trav == null) {
+		   return;
+		}
+		postOrder(trav.left);
+		postOrder(trav.right);
+		System.out.print(" " + trav.data);
+	}
+	
+	public void postOrder() {
+		System.out.print("postOrder print : ");
+		postOrder(root);
+		System.out.println();
+	}
+	
+	public Node search(int key) {
+		Node trav = root;
+		while(trav != null) {
+			if(trav.data == key) {
+				return trav;
+			} else {
+				if(trav.data > key) {
+					trav = trav.left;
+				} else {
+					trav = trav.right;
+				}
+			}
+		}
+		return null;
+	}
+   
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

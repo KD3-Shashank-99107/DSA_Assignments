@@ -1,0 +1,44 @@
+package Que4;
+
+public class MultiPostFixMain {
+	
+	public static int calculate(int op1, char opr, int op2) {
+		switch(opr) {
+		case '+': return op1 + op2;
+		case '-': return op1 - op2;
+		case '*': return op1 * op2;
+		case '/': return op1 / op2;
+		case '%': return op1 % op2;
+		case '$': return (int)Math.pow(op1, op2);
+		}
+		return 0;
+	}
+	
+	public int MultiPostFixMain(String s) {
+		int[] arr = new int[100];
+		int top = -1;
+		
+		String[] arr2 = s.split(s);
+		for(int i = 0;i<arr2.length;i++) {
+			String val = arr2[i];
+			if(val.matches("\\d+")) {
+				int intval = Integer.parseInt(val);
+				arr[++top] = intval;
+			} else {
+				int op2 = arr[top--];
+				int op1 = arr[top--];
+				char value = val.charAt(0);
+				arr[++top] = calculate(op1 , value, op2);
+				
+			}
+		}
+		return arr[top];
+	}
+
+	public static void main(String[] args) {
+		String mult = "10 20 + 5 *";
+		MultiPostFixMain mpf = new MultiPostFixMain();
+	System.out.println(mpf.MultiPostFixMain(mult));	
+	}
+
+}

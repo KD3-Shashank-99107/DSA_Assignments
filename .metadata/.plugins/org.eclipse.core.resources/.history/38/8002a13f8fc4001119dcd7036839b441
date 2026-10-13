@@ -1,0 +1,15 @@
+package DoubleLinearLinkedList;
+
+public class LinkedListMain {
+
+	public static void main(String[] args) {
+		LinkedList list = new LinkedList();
+		list.addFirst(30);
+		list.addFirst(10);
+		list.addFirst(20);
+		list.displayFirst();
+		list.displayLast();
+		System.out.println("Size : " + list.size());
+	}
+
+}

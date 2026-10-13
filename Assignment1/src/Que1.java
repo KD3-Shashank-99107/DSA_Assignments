@@ -1,0 +1,18 @@
+
+public class Que1 {
+	static void binaryToDecimal(int num) {
+		
+		if(num == 0) {
+			return;
+		}
+		
+			int num1 = num/2;
+			binaryToDecimal(num1);
+			System.out.println(num%2);
+		
+	}
+	
+	public static void main(String args[]) {
+		binaryToDecimal(11);
+	}
+}

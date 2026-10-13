@@ -1,0 +1,15 @@
+
+public class LinkedListMain {
+
+	public static void main(String[] args) {
+
+		LinkedList list = new LinkedList();
+		
+		list.addFirst(20);
+		list.addFirst(10);
+		
+		list.display();
+
+	}
+
+}

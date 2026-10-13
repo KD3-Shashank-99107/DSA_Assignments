@@ -1,0 +1,68 @@
+
+package Circular;
+class LinkedList {
+	static class Node{
+		private int data;
+		private Node next;
+		
+		public Node(int value) {
+			data = value;
+			next = null;
+		}
+	}
+
+	private Node head, tail;
+	
+	public LinkedList() {
+		head = tail = null;
+	}
+	
+	public boolean isEmpty() {
+		return head == null && tail == null;
+	}
+	
+	public void addFirst(int value) {
+		Node newNode = new Node(value);
+		newNode.next = head;
+		head = newNode;
+		tail.next = head;
+	}
+	
+	public void addLast(int value) {
+		
+	}
+	
+	public void deleteFirst() {
+		
+	}
+	
+	public void deleteLast() {
+		
+	}
+	
+	public void display() {
+		Node trav = head;
+		while(trav != tail) {
+			System.out.println();
+			trav = trav.next;
+		}
+	}
+	
+	public void deleteAll() {
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

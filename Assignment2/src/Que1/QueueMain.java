@@ -1,0 +1,36 @@
+package Que1;
+
+import java.util.Scanner;
+
+public class QueueMain {
+
+	public static void main(String[] args) {
+		QueueUsingCounter lq = new QueueUsingCounter(2);
+
+		Scanner sc = new Scanner(System.in);
+		int choice;
+
+		do {
+			System.out.println("1.Offer\n2.Poll\n3.Peek\n");
+			choice = sc.nextInt();
+			switch (choice) {
+			case 1:
+				System.out.println("Enter value to input");
+				int input = sc.nextInt();
+				lq.offer(input);
+				break;
+			case 2:
+				System.out.println(lq.poll());
+				break;
+			case 3:
+				System.out.println(lq.peek());
+				break;
+			default:
+				System.out.println("Invalid input");
+				break;
+			}
+
+		} while (choice != 0);
+	}
+
+}

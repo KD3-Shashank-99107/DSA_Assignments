@@ -1,0 +1,68 @@
+package DoubleLinearLinkedList;
+
+public class LinkedList {
+	static class Node {
+		private int data;
+		private Node next;
+		private Node prev;
+
+		public Node(int value) {
+			data = value;
+			next = prev = null;
+		}
+	}
+
+	private Node head;
+	private Node tail;
+	private int size;
+
+	public LinkedList() {
+		head = tail = null;
+		size = 0;
+	}
+
+	public boolean isEmpty() {
+		return head == null;
+	}
+
+	public void addFirst(int value) {
+		Node newNode = new Node(value);
+		if (isEmpty()) {
+			head = newNode;
+			tail = newNode;
+		} else {
+			newNode.next = head;
+			newNode.prev = null;
+			head = newNode;
+		}
+		size++;
+	}
+	
+	public void addLast() {
+		
+	}
+
+	public void displayFirst() {
+		if (isEmpty()) {
+			System.out.println("List is empty");
+		} else {
+			Node trav = head;
+			while (trav != null) {
+				System.out.println(" " + trav.data);
+				trav = trav.next;
+			}
+		}
+	}
+	
+	public void displayLast() {
+		if (isEmpty()) {
+			System.out.println("List is empty");
+		} else {
+			Node trav = tail;
+			while (trav != null) {
+				System.out.println(" " + trav.data);
+				trav = trav.prev;
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+
+public class Que5 {
+	public static int findnthOccurence(int[] arr , int key , int n) {
+		int count = 0;
+		for(int i = 0;i<arr.length;i++) {
+			if(arr[i] == key) {
+				count++;
+			}
+			if(count == n) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	public static void main(String[] args) {
+		int[] arr = {10, 20, 30, 20, 40, 20, 50};
+		int key = 20;
+		int n = 4;
+		
+	  System.out.println(findnthOccurence(arr , key , n));	
+	}
+}

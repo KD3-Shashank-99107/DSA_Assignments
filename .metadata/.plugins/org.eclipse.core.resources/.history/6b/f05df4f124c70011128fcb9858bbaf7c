@@ -1,0 +1,31 @@
+
+public class Que4 {
+
+	public ListNode deleteMiddle(ListNode head) {
+		ListNode slow = head;
+		ListNode trav = head;
+		int count = 0;
+
+		while (trav != null) {
+			count++;
+			trav = trav.next;
+		}
+		if (count <= 1) {
+			head = null;
+			return head;
+		}
+		if (count == 2) {
+			slow.next = null;
+			return head;
+		}
+		int newCount = 1;
+
+		while (newCount != count / 2) {
+			newCount++;
+			slow = slow.next;
+		}
+		slow.next = slow.next.next;
+		return head;
+	}
+
+}

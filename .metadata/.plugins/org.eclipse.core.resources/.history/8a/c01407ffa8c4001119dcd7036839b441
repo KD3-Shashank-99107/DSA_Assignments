@@ -1,0 +1,79 @@
+package DoublyCircularLinkedList;
+
+public class LinkedList {
+	static class Node {
+		private int data;
+		private Node next;
+		private Node prev;
+
+		public Node(int value) {
+			data = value;
+			next = prev = null;
+		}
+	}
+
+	private Node tail;
+	private int size;
+
+	public LinkedList() {
+		tail = null;
+		size = 0;
+	}
+
+	public boolean isEmpty() {
+		return tail == null;
+	}
+
+	public void addFirst(int value) {
+		Node newNode = new Node(value);
+		if (isEmpty()) {
+			tail = newNode;
+			tail.next = newNode;
+			tail.prev = newNode;
+		} else {
+			newNode.prev = tail;
+			newNode.next = tail.next;
+			tail.next = newNode;
+			tail.prev = newNode;
+		}
+		size++;
+	}
+
+	public void addLast(int value) {
+
+	}
+
+	public void deleteFirst() {
+
+	}
+
+	public void deleteLast() {
+
+	}
+
+	public void displayFirst() {
+		Node trav = tail;
+		int count = 0;
+		while(count != size) {
+			System.out.println(" " + trav.data);
+			count++;
+			trav=trav.next;
+		}
+	}
+
+	public void displayLast() {
+
+	}
+
+	public void addPosition(int value, int pos) {
+		
+	}
+
+	public void deletePosition(int pos) {
+
+	}
+
+	public int size() {
+		return size;
+	}
+}

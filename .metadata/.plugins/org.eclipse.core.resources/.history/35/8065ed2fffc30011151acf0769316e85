@@ -1,0 +1,49 @@
+package Que1;
+
+public class LinkedList {
+	static class Node{
+		private int data;
+		private Node next;
+		
+		public Node(int value) {
+			data = value;
+			next = null;
+		}
+	}
+	
+	private Node head;
+	
+	public LinkedList() {
+		head = null;
+	}
+	
+	public boolean isEmpty() {
+		return head == null;
+	}
+	
+	public void addData(int value) {
+		Node newNode = new Node(value);
+		if(isEmpty()) {
+			head = newNode;
+		} else {
+			Node trav = head;
+			while(trav != null) {
+				if(trav.data < value) {
+					return;
+				} else {
+					trav = trav.next;
+				}
+			}
+			newNode.next =  trav.next;
+			trav.next = newNode;
+		}
+	}
+	
+	public void display() {
+		Node trav = head;
+		while(trav != null) {
+			System.out.println(trav.data);
+			trav=trav.next;
+		}
+	}
+}

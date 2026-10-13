@@ -1,0 +1,113 @@
+
+public class LinkedList {
+	static class Node{
+		private int data;
+		private Node next;
+		
+		public Node(int value) {
+			data = value;
+			next = null;
+		}
+	}
+	
+	private Node head;
+	
+	public LinkedList() {
+		head = null;
+	}
+	
+	public boolean isEmpty() {
+		return head == null;
+	}
+	
+	public void addFirst(int value) {
+		Node newNode = new Node(value);
+		newNode.next = head;
+		head = newNode;
+	}
+	
+	public void addLast(int value) {
+		Node newNode = new Node(value);
+		if(head == null) 
+			head = newNode;
+		else {
+			Node trav = head;
+			while(trav.next != null) {
+				trav = trav.next;
+			}
+			trav.next = newNode;
+		}
+	}
+	
+	public void addPosition(int value, int pos) {
+		Node newNode = new Node(value);
+		if(pos <= 0) {
+			return;
+		}
+		if(pos == 1) {
+			newNode.next = head;
+			head = newNode;
+			return;
+		}
+		Node trav = head;
+		for(int i = 1;i<pos - 1  ;i++) {
+			trav = trav.next;
+		}
+		if(trav.next == null) {
+			return;
+		}
+		newNode.next = trav.next;
+		trav.next = newNode;
+	}
+	
+	public void deleteFirst() {
+		if(head == null)
+			return;
+		head = head.next;
+	}
+	
+	public void deleteLast() {
+		if(head == null)
+			return;
+		Node trav = head;
+		while(trav.next.next != null) {
+			trav = trav.next;
+		}
+		trav.next = null;
+	}
+	
+	public void deletePosition(int pos) {
+		
+	}
+	
+	public void display() {
+		Node trav = head;
+		while(trav != null) {
+			System.out.println(" " + trav.data);
+			trav = trav.next;
+		}
+	}
+	
+	public void deleteAll() {
+		head = null;
+		System.out.println("List is empty");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
