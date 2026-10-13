@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="Employee"/>
-    <fullyQualifiedTypeName name="java.util.Collection"/>
-    <fullyQualifiedTypeName name="BST"/>
-    <fullyQualifiedTypeName name="BST.Node"/>
-    <fullyQualifiedTypeName name="java.nio.file.attribute.BasicFileAttributes"/>
-</qualifiedTypeNameHistroy>
